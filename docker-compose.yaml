@@ -2,7 +2,6 @@ services:
   wordpress:
     build:
       context: .
-      dockerfile: Dockerfile
     image: wordpress:latest
     container_name: wordpress_server
     restart: on-failure
