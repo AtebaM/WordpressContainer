@@ -1,16 +1,5 @@
 # WordPress Dockerized Project
 
-## Table of Contents (ToC)
-1. [Description](#description)
-2. [Quickstart](#quickstart)
-   - [Prerequisites](#prerequisites)
-   - [Quick Start Guide](#quick-start-guide)
-3. [Usage and Configuration](#usage-and-configuration)
-   - [Project Structure](#project-structure)
-   - [Environment Variables (`.env`)](#environment-variables-env)
-   - [Customizing Ports and Services](#customizing-ports-and-services)
-   - [Data Persistence (Volumes)](#data-persistence-volumes)
-
 ---
 
 ## Description
@@ -24,6 +13,19 @@ This repository provides a ready-to-use DevOps architecture, containerized via *
 * **Internal Networking:** Containers communicate securely via a dedicated Docker network (`wp_network`).
 
 ---
+
+## Table of Contents (ToC)
+1. [Description](#description)
+2. [Quickstart](#quickstart)
+   - [Prerequisites](#prerequisites)
+   - [Quick Start Guide](#quick-start-guide)
+3. [Usage and Configuration](#usage-and-configuration)
+   - [Project Structure](#project-structure)
+   - [Environment Variables (`.env`)](#environment-variables-env)
+   - [Customizing Ports and Services](#customizing-ports-and-services)
+   - [Data Persistence (Volumes)](#data-persistence-volumes)
+
+
 
 ## Quickstart
 
@@ -46,6 +48,7 @@ Before running the server, ensure you have the following installed on your host 
 3. **Start the containers** in the background using the following command:
    ```bash
    docker compose up -d
+   ```
 
 
 ## Usage and Configuration
@@ -64,13 +67,16 @@ Every file included in this repository serves a specific purpose
 
 ## Project Structure
 
-.
-├── docker-compose.yml   # Services orchestration file
-├── .env                 # Confidential file containing environment variables
+```
+ docker-compose.yml   # Services orchestration file
+.env                 # Confidential file containing environment variables
+
+```
 
 ## Environment Variables (.env)
 
-The .env file centralizes all passwords and configurable parameters. Create a file named .env(see the structure of .env.example)
+> [!NOTE]
+>The .env file centralizes all passwords and configurable parameters. Create a file named .env(see the structure of .env.example)
 
 How to modify it for different results?
 
@@ -101,9 +107,9 @@ docker compose up -d
 
 WordPress and MySQL data are stored in volumes managed by Docker:
 
-** wordpress_data : Stores source code, themes, plugins, and uploaded media (/var/www/html).
+- wordpress_data : Stores source code, themes, plugins, and uploaded media (/var/www/html).
 
-** mysql_data : Stores database files (/var/lib/mysql).
+- mysql_data : Stores database files (/var/lib/mysql).
 
 Complete Cleanup (Warning - Deletes all data):
 

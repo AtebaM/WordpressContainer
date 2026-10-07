@@ -1,7 +1,5 @@
 services:
   wordpress:
-    build:
-      context: .
     image: wordpress:latest
     container_name: wordpress_server
     restart: on-failure
